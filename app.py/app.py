@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 @app.route('/home')
 def home():
@@ -18,7 +18,7 @@ def profile():
         'form.html',
         firstname=firstname,
         lastname=lastname,
-        sex=sex,
+        sex=sex,        
         status=status,
         location=location
     )
